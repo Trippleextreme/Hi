@@ -1,0 +1,23 @@
+{
+  "geode": "5.11.2",
+  "gd": {
+    "win": "2.2081",
+    "mac": "2.2081",
+    "android": "2.2081"
+  },
+  "id": "cesar.input-buffer",
+  "name": "Predictive Input Buffer",
+  "version": "v0.2.0",
+  "developer": "CesarGD96",
+  "description": "Replays jump taps you made just before landing. Change the strength in the mod settings (or press F6 on desktop).",
+  "settings": {
+    "stage": {
+      "type": "int",
+      "name": "Buffer stage",
+      "description": "1: 2 ticks, 2: 4 ticks, 3: 8 ticks, 4: 16 ticks, 5: off. A tick is 1/240 s (4 ticks is about 1 frame at 60 FPS).",
+      "default": 1,
+      "min": 1,
+      "max": 5
+    }
+  }
+}
