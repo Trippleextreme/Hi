@@ -7,6 +7,22 @@ on:
       - main
 
 jobs:
+  logic-tests:
+    name: Logic tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run the logic tests against mock game classes
+        run: |
+          mkdir -p .mock/Geode/modify
+          cp mock_geode.hpp .mock/Geode/Geode.hpp
+          for h in CCKeyboardDispatcher GJBaseGameLayer PlayLayer PlayerObject PauseLayer; do
+            echo '#pragma once' > .mock/Geode/modify/$h.hpp
+          done
+          g++ -std=c++23 -fno-access-control -I.mock logic_tests.cpp -o logic_tests
+          ./logic_tests
+
   build:
     name: Android64 (arm64-v8a)
     runs-on: ubuntu-latest
