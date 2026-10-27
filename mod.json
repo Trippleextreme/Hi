@@ -1,0 +1,81 @@
+{
+  "geode": "5.11.2",
+  "gd": {
+    "win": "2.2081",
+    "mac": "2.2081",
+    "android": "2.2081"
+  },
+  "id": "cesar.input-buffer",
+  "name": "Predictive Input Buffer",
+  "version": "v0.6.0",
+  "developer": "CesarGD96",
+  "description": "Replays jump taps you made just before landing or touching an orb, and delays ship, wave and swing inputs a few ticks when they would crash. One slider sets the strength for every game mode.",
+  "settings": {
+    "ticks": {
+      "type": "int",
+      "name": "Buffer ticks",
+      "description": "One slider for every game mode. How early a tap can still count (cube, ball, robot, spider, UFO) and the most a ship, wave or swing input may be delayed. 1 tick = 1/240 s, so 4 ticks is about 1 frame at 60 FPS. 0 turns the mod off.",
+      "default": 4,
+      "min": 0,
+      "max": 16
+    },
+    "buffer-rings": {
+      "type": "bool",
+      "name": "Buffer orbs",
+      "description": "Also replay taps made just before touching an orb or ring.",
+      "default": true
+    },
+    "show-counter": {
+      "type": "bool",
+      "name": "Show replay counter",
+      "description": "Shows how many taps were replayed (this attempt and in total) at the bottom of the screen.",
+      "default": false
+    },
+    "practice-only": {
+      "type": "bool",
+      "name": "Practice mode only",
+      "description": "Turn the whole mod off outside practice mode.",
+      "default": false
+    },
+    "assist-enabled": {
+      "type": "bool",
+      "name": "Ship, wave & swing assist",
+      "description": "Looks a few ticks ahead and, if a ship, wave or swing press/release would crash, delivers it later instead (up to the Buffer ticks limit). Skipped in platformer, and whenever the look-ahead hits an orb, pad, trigger or portal.",
+      "default": true
+    },
+    "assist-dual": {
+      "type": "bool",
+      "name": "Assist in dual mode",
+      "description": "Also run the ship/wave/swing assist in dual mode, holding back both players' inputs together. Off by default because it is the least tested part.",
+      "default": false
+    },
+    "assist-margin": {
+      "type": "int",
+      "name": "Required safe ticks",
+      "description": "After the tick where your raw input would crash, a delayed input must keep the hidden player alive this many ticks longer to count as a save. Higher = stricter, fewer but safer saves.",
+      "default": 12,
+      "min": 4,
+      "max": 40
+    },
+    "assist-budget-ms": {
+      "type": "int",
+      "name": "Look-ahead time budget (ms)",
+      "description": "If the look-ahead takes longer than this for one input, it is abandoned and your input passes through. Lower it if you notice lag.",
+      "default": 6,
+      "min": 1,
+      "max": 30
+    },
+    "assist-autopause": {
+      "type": "bool",
+      "name": "Pause assist when it keeps failing",
+      "description": "If most of the saves on a level are followed by a crash (for example because of moving objects the look-ahead can't see), pause the assist for the rest of that level.",
+      "default": true
+    },
+    "assist-pause-with": {
+      "type": "string",
+      "name": "Pause assist with these mods",
+      "description": "Mod IDs, separated by commas. The ship/wave/swing assist stays off while any of them is enabled. Use this if another mod reacts to the hidden player.",
+      "default": ""
+    }
+  }
+}
