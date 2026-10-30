@@ -1,3 +1,6 @@
+# v0.7.0
+- **Accuracy test ("drift test").** New setting, off by default, log only. At each ship, wave or swing input the hidden player predicts the next ~32 ticks; as your real player then moves, the two paths are compared and the difference is written to the log. It never changes an input. At the end of a level it logs a summary with a verdict: a close match, an error that grows over time (the hidden player's physics differ), or an error already present after one step (something is not being copied to the hidden player). It also checks whether real crashes were predicted on the right tick.
+
 # v0.6.0
 - **One slider.** "Buffer ticks" now sets the strength for every game mode: the buffer window for cube, ball, robot, spider and UFO, and the delay limit for ship, wave and swing. The separate per-mode sliders are gone.
 - **Hitbox guard.** If another mod (for example a "show hitboxes on death" option) switches the hitbox display on because of the hidden player the ship/wave look-ahead uses, the mod switches it back off. Hitboxes you turned on yourself, and hitboxes shown after a real crash, are left alone. The log says when it happens.

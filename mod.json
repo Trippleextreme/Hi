@@ -5,10 +5,10 @@
     "mac": "2.2081",
     "android": "2.2081"
   },
-  "id": "cesar.input-buffer",
+  "id": "2mizy.input-buffer",
   "name": "Predictive Input Buffer",
-  "version": "v0.6.0",
-  "developer": "CesarGD96",
+  "version": "v0.7.0",
+  "developer": "2mizy",
   "description": "Replays jump taps you made just before landing or touching an orb, and delays ship, wave and swing inputs a few ticks when they would crash. One slider sets the strength for every game mode.",
   "settings": {
     "ticks": {
@@ -76,6 +76,12 @@
       "name": "Pause assist with these mods",
       "description": "Mod IDs, separated by commas. The ship/wave/swing assist stays off while any of them is enabled. Use this if another mod reacts to the hidden player.",
       "default": ""
+    },
+    "drift-test": {
+      "type": "bool",
+      "name": "Accuracy test (log only)",
+      "description": "Compares the look-ahead's predicted path with where your player really ends up, and writes the result to the log (look for 'drift'). It never changes your inputs. Turn it on, play some ship/wave, then check the log. Skipped in dual mode and platformer.",
+      "default": false
     }
   }
 }

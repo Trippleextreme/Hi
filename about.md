@@ -14,6 +14,9 @@ When you press or release, a hidden copy of your player is run a few dozen ticks
 ## Pause menu
 Use the button at the bottom of the pause menu to choose a strength for the current level.
 
+## Accuracy test
+Turn on "Accuracy test (log only)" in the settings, play some ship or wave, and look for `drift` in the Geode log. It compares the look-ahead's predicted path with where your player really went and never changes your inputs. The summary line at the end of a level tells you how close the match was.
+
 ## Good to know
 - It is a timing assist. Think about whether you want it on for runs you plan to submit anywhere; the **Practice mode only** setting turns it off outside practice.
 - The look-ahead does not see moving objects. If the assist keeps failing on a level it pauses itself.

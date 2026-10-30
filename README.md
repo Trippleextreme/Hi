@@ -20,4 +20,7 @@ The workflow builds Android64 (arm64-v8a). Windows and macOS are not built right
 
 ## Switches in `src/main.cpp`
 If a build fails on one part, set that macro near the top to `0`:
-`PIB_ENABLE_RINGS`, `PIB_ENABLE_ASSIST`, `PIB_ENABLE_DUAL`, `PIB_ENABLE_PAUSEUI`, `PIB_ENABLE_PRACTICE`, `PIB_ENABLE_HITBOXGUARD`.
+`PIB_ENABLE_RINGS`, `PIB_ENABLE_ASSIST`, `PIB_ENABLE_DUAL`, `PIB_ENABLE_PAUSEUI`, `PIB_ENABLE_PRACTICE`, `PIB_ENABLE_HITBOXGUARD`, `PIB_ENABLE_DRIFT`.
+
+## Accuracy test
+Enable "Accuracy test (log only)" in the mod settings, play ship/wave, and read the `InputBuffer` lines containing `drift` in the Geode log. Errors are in game units (30 = one block). A good match is well under 1 unit; the summary line gives a verdict.
